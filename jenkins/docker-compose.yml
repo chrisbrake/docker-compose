@@ -1,9 +1,12 @@
-version: '2.2'
+version: '2.3'
 
 services:
-  jenkins-lts:
+  manager:
     image: jenkins/jenkins:lts
+    volumes:
+      - manager_jenkins_home:/var/jenkins_home
     ports:
       - 8080:8080
       - 50000:50000
-
+volumes:
+  manager_jenkins_home:
