@@ -3,10 +3,17 @@ version: '2.3'
 services:
   manager:
     image: jenkins/jenkins:lts
+    restart: always
     volumes:
       - manager_jenkins_home:/var/jenkins_home
     ports:
       - 8080:8080
       - 50000:50000
+  docker_reg:
+    image: registry:2
+    restart: always
+    ports: 
+      - 5000:5000
+      
 volumes:
   manager_jenkins_home:
