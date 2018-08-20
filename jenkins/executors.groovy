@@ -1,2 +1,5 @@
 import jenkins.model.*
-Jenkins.instance.setNumExecutors(5)
+  
+int coreCount = Runtime.getRuntime().availableProcessors();
+
+Jenkins.instance.setNumExecutors(coreCount)
