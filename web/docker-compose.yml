@@ -1,0 +1,10 @@
+version: '2.3'
+
+services:
+  web:
+    image: nginx:stable-alpine
+    ports:
+     - "80:80"
+    environment:
+     - NGINX_HOST=muz.ca
+     - NGINX_PORT=80
