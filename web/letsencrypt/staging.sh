@@ -3,7 +3,7 @@
 docker run -it --rm \
 -v "/$(pwd)/tmp/etc/letsencrypt:/etc/letsencrypt:z" \
 -v "/$(pwd)/tmp/var/lib/letsencrypt:/var/lib/letsencrypt:z" \
--v "/$(pwd)/tmp/site:/data/letsencrypt:z" \
+-v "/$(pwd)/site:/data/letsencrypt:z" \
 -v "/$(pwd)/tmp/var/log/letsencrypt:/var/log/letsencrypt:z" \
 certbot/certbot \
 certonly --webroot \
