@@ -7,7 +7,7 @@ docker run -it --rm \
 -v "/$(pwd)/tmp/var/log/letsencrypt:/var/log/letsencrypt:z" \
 certbot/certbot \
 certonly --webroot \
---email "{$1}" --agree-tos --no-eff-email \
+--email "$1" --agree-tos --no-eff-email \
 --webroot-path=/data/letsencrypt \
 --config-dir ~/.certbot/config \
 --logs-dir ~/.certbot/logs \
