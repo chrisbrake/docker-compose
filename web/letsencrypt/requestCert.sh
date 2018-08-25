@@ -9,7 +9,4 @@ certbot/certbot \
 certonly --webroot \
 --email "$1" --agree-tos --no-eff-email \
 --webroot-path=/data/letsencrypt \
---config-dir ~/.certbot/config \
---logs-dir ~/.certbot/logs \
---work-dir ~/.certbot/work \
 -d muz.ca -d www.muz.ca
