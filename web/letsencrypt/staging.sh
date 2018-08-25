@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 docker run -it --rm \
--v /home/cig/docker-compose/web/letsencrypt/etc/letsencrypt:/etc/letsencrypt:z \
--v /home/cig/docker-compose/web/letsencrypt/var/lib/letsencrypt:/var/lib/letsencrypt:z \
--v /home/cig/docker-compose/web/letsencrypt/site:/data/letsencrypt:z \
--v /home/cig/docker-compose/web/letsencrypt/var/log/letsencrypt:/var/log/letsencrypt:z \
+-v "/$(pwd)/tmp/etc/letsencrypt:/etc/letsencrypt:z" \
+-v "/$(pwd)/tmp/var/lib/letsencrypt:/var/lib/letsencrypt:z" \
+-v "/$(pwd)/tmp/site:/data/letsencrypt:z" \
+-v "/$(pwd)/tmp/var/log/letsencrypt:/var/log/letsencrypt:z" \
 certbot/certbot \
 certonly --webroot \
 --register-unsafely-without-email --agree-tos \
