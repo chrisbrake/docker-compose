@@ -10,9 +10,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    environment:
-      - NGINX_HOST=muz.ca
-      - NGINX_PORT=80
     volumes:
       - letsencrypt:/letsencrypt
 
