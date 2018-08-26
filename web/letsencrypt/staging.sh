@@ -2,6 +2,8 @@
 
 docker volume create --name letsencrypt
 
+docker-compose up -d
+
 docker run -it --rm \
 -v letsencrypt:/etc/letsencrypt \
 -v "/$(pwd)/site:/data/letsencrypt:z" \
@@ -11,3 +13,5 @@ certonly --webroot \
 --webroot-path=/data/letsencrypt \
 --staging \
 -d muz.ca -d www.muz.ca
+
+docker-compose down
