@@ -1,4 +1,4 @@
-#Let's Encrypt Bootstrap
+# Let's Encrypt Bootstrap
 
     ./staging.sh # Verify you have no errors here, 
     # so you don't use up your limit of requests per day.
