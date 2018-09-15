@@ -6,4 +6,4 @@ docker run --rm -it --name certbot \
     certbot/certbot renew \
     --webroot -w /data/letsencrypt --quiet \
     \
-    && docker kill --signal=HUP production-nginx-container
+    && docker kill --signal=HUP web
