@@ -1,0 +1,27 @@
+version: '2.3'
+
+services:
+  http:
+    image: nginx:latest
+    restart: always
+    environment:
+      - NGINX_PORT=80
+    ports:
+      - 80:80
+    volumes:
+      - http:/usr/share/nginx/html:ro
+
+  sftp:
+    image: sftp:latest
+    restart: always
+    command: chrisbrake:pass:1001
+    environment:
+      - SFTP_USERS=chrisbrake
+    ports:
+      - 22:22
+    volumes:
+      - http:/home/chrisbrake:rw
+
+volumes:
+  http:
+    external: true
